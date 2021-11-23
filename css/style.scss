@@ -1,0 +1,94 @@
+/*Other*/
+$light-indigo: #90ACCB;
+$indigo: #28459D;
+$dark-indigo: #0C1134;
+$dark-grey: #121212;
+$blossom: #ffb7c5;
+
+/*Fonts*/
+$font-dark: rgba(255,255,255,0.87);
+$font-mid-dark: rgba(255,255,255,0.6);
+$font-light-dark: rgba(255,255,255,0.38);
+$blossom-translucent: rgba(255, 183, 197, 0.6);
+$indigo-translucent: rgba(40, 69, 157, 0.6);
+
+body {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 20px;
+
+    header {
+        nav {
+            max-width: 1440px;
+            margin: auto;
+            padding: 0 20px;
+
+            .logo-wrap {
+                a > div {
+                    width: 50px;
+                }
+
+                .logo-left {
+                    text-align: right;
+                    padding-right: 5px;
+                }
+                
+                .logo-right {
+                    text-align: left;
+                    padding-left: 5px;
+                }
+
+                svg {
+                    width: 75px;
+                    height: 75px;
+                }
+            }
+        }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        
+        .footNote {
+        font-size: 0.7rem;
+        color: $font-light-dark;
+        text-align: center;
+
+            .highlight {
+                font-size: 0.9rem;
+                color: $dark-indigo; 
+            }
+        }
+    }
+}
+
+.background {
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+
+    .seigaiha {
+        position: absolute;
+        max-width: 500px;
+        width: 40%;
+        pointer-events: none;
+        right: 0;
+        bottom: 0;
+    }
+
+    svg {
+        fill: none;
+        stroke: $indigo-translucent;
+        stroke-width: 2px;
+        stroke-dasharray: 15 5;
+        /*stroke-dashoffset: 50; 0 - 100 range */
+        transition: 0.6s ease all;
+    }
+}

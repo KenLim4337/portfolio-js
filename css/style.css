@@ -1,0 +1,80 @@
+/*Other*/
+/*Fonts*/
+body {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+body header nav {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+body header nav .logo-wrap a > div {
+  width: 50px;
+}
+
+body header nav .logo-wrap .logo-left {
+  text-align: right;
+  padding-right: 5px;
+}
+
+body header nav .logo-wrap .logo-right {
+  text-align: left;
+  padding-left: 5px;
+}
+
+body header nav .logo-wrap svg {
+  width: 75px;
+  height: 75px;
+}
+
+body footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+body footer .footNote {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.38);
+  text-align: center;
+}
+
+body footer .footNote .highlight {
+  font-size: 0.9rem;
+  color: #0C1134;
+}
+
+.background {
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.background .seigaiha {
+  position: absolute;
+  max-width: 500px;
+  width: 40%;
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+}
+
+.background svg {
+  fill: none;
+  stroke: rgba(40, 69, 157, 0.6);
+  stroke-width: 2px;
+  stroke-dasharray: 15 5;
+  /*stroke-dashoffset: 50; 0 - 100 range */
+  -webkit-transition: 0.6s ease all;
+  transition: 0.6s ease all;
+}
+/*# sourceMappingURL=style.css.map */
