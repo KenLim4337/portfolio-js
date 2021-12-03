@@ -31,16 +31,183 @@ body header nav .logo-wrap svg {
   height: 75px;
 }
 
-body footer {
+body header .socials {
+  width: 170px;
+  text-align: right;
+}
+
+body header .socials svg {
+  fill: #28459D;
+  -webkit-transition: 0.3s ease fill;
+  transition: 0.3s ease fill;
+}
+
+body header .socials a {
+  margin: 0 5px;
+}
+
+body header .socials a:last-of-type {
+  margin-right: 0;
+}
+
+body header .socials a:hover svg {
+  fill: rgba(40, 69, 157, 0.6);
+}
+
+body header .toggle-wrap {
+  width: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-align: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 10px;
+}
+
+body header .toggle-wrap i svg {
+  vertical-align: middle;
+  fill: #28459D;
+  -webkit-transition: 0.4s ease fill;
+  transition: 0.4s ease fill;
+}
+
+body header .toggle-wrap i.darkIcon svg {
+  fill: rgba(40, 69, 157, 0.6);
+}
+
+body header .toggle-wrap .modeToggle {
+  width: 42px;
+  height: 26px;
+  border-radius: 13px;
+  margin: 0 10px;
+  border: none;
+  background: #28459D;
+  cursor: pointer;
+  padding: 0;
+  -webkit-transition: 0.4s ease background;
+  transition: 0.4s ease background;
+}
+
+body header .toggle-wrap .modeToggle .toggleInner {
+  position: relative;
+  margin: 3px;
+  width: 38px;
+  height: 20px;
+}
+
+body header .toggle-wrap .modeToggle .toggleInner .toggleCircle {
   position: absolute;
-  bottom: 0;
   left: 0;
+  top: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header .toggle-wrap .modeToggle .toggleInner .toggleCircle:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 0;
+  border-top: 1px #28459D solid;
+  border-bottom: 1px #28459D solid;
+  -webkit-transition: 0.4s ease border;
+  transition: 0.4s ease border;
+}
+
+body header .toggle-wrap .modeToggle:hover {
+  background: #ffb7c5;
+}
+
+body header .toggle-wrap .modeToggle:hover + i.lightIcon svg {
+  fill: #ffb7c5;
+}
+
+body header .toggle-wrap .modeToggle:hover .toggleCircle:after {
+  border-top: 1px #ffb7c5 solid;
+  border-bottom: 1px #ffb7c5 solid;
+}
+
+body header .toggle-wrap.dark i.darkIcon svg {
+  fill: #28459D;
+}
+
+body header .toggle-wrap.dark i.lightIcon svg {
+  fill: #ffb7c5;
+}
+
+body header .toggle-wrap.dark:hover i.darkIcon svg {
+  fill: white;
+}
+
+body header .toggle-wrap.dark .modeToggle {
+  background: #90ACCB;
+}
+
+body header .toggle-wrap.dark .modeToggle .toggleInner .toggleCircle {
+  left: calc(100% - 22px);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background: rgba(255, 183, 197, 0.6);
+}
+
+body header .toggle-wrap.dark .modeToggle .toggleInner .toggleCircle:after {
+  border-top: 1px #90ACCB solid;
+  border-bottom: 1px #90ACCB solid;
+}
+
+body main {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  min-height: 100vh;
+  height: 100%;
+}
+
+body main .head-wrap {
+  border-radius: 50%;
+  width: 425px;
+  height: 425px;
+  padding: 0;
+  overflow: hidden;
+}
+
+body main .head-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body main .bio-text {
+  width: calc(100% - 425px);
+  padding-left: 75px;
+}
+
+body footer {
   width: 100%;
 }
 
 body footer .footNote {
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.38);
+  color: #121212;
   text-align: center;
 }
 
