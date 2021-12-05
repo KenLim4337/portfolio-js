@@ -1,9 +1,10 @@
 /*Other*/
 $light-indigo: #90ACCB;
 $indigo: #28459D;
-$dark-indigo: #0C1134;
+$dark-indigo: #12194d;
 $dark-grey: #121212;
 $blossom: #ffb7c5;
+$blossom-dark: #c27685;
 
 /*Fonts*/
 $font-dark: rgba(255,255,255,0.87);
@@ -12,36 +13,128 @@ $font-light-dark: rgba(255,255,255,0.38);
 $blossom-translucent: rgba(255, 183, 197, 0.6);
 $indigo-translucent: rgba(40, 69, 157, 0.6);
 
+
 body {
     max-width: 1440px;
     margin: auto;
     padding: 0 20px;
+    color: $dark-grey;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.3s ease all;
+
+    h1, h2, h3, h4, h5 {
+      color: $dark-indigo;
+      font-family: 'Montserrat', sans-serif;
+      transition: 0.3s ease all;
+    }
+
+    a {
+      color: $indigo;
+      text-decoration: none;
+      transition: 0.3s ease all;
+    }
+
+    a:hover {
+      color: $indigo-translucent;
+    }
+
+    .card {
+      border-color: $indigo-translucent;
+      height: 100%;
+      transition: 0.3s ease all;
+    }
+
+    .navbar {
+      background: white;
+      box-shadow: 0 10px 20px -25px $dark-grey;
+      transition: 0.3s ease all;
+    }
+
+    button.btn.btn-primary {
+      padding: 10px 0;
+      width: 200px;
+      display: block;
+      margin: auto;
+      background-color: $indigo;
+      border-color: $indigo;
+
+      &:hover {
+        color: $indigo;
+        background-color: white;
+      }
+    }
 
     header {
         nav {
             max-width: 1440px;
             margin: auto;
             padding: 0 20px;
+            
+            .navbar-nav a.nav-link {
+              padding: 0 50px;
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 600;
+              color: $indigo;
+              text-decoration: none;
+              transition: 0.3s ease all;
+              font-size: 1.1rem;
 
-            .logo-wrap {
-                a > div {
-                    width: 50px;
-                }
+              &:hover {
+                color: $indigo-translucent;
+              }
+            }
 
-                .logo-left {
-                    text-align: right;
-                    padding-right: 5px;
-                }
-                
-                .logo-right {
-                    text-align: left;
-                    padding-left: 5px;
-                }
+            a.nav-name {
+              font-family: 'Montserrat', sans-serif;
+              font-size: 1.4rem;
+              padding: 0 40px;
+              position: relative;
 
-                svg {
-                    width: 75px;
-                    height: 75px;
+              &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                left: 15px;
+                top: -10px;
+                width: 0px;
+                height: 0px;
+                margin: auto;
+                border-radius: 50%;
+                border: transparent dashed 1px;
+                transition:0.3s ease all;
+              }
+
+              &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                left: 0px;
+                bottom: -10px;
+                width: 0px;
+                height: 0px;
+                margin: auto;
+                border-radius: 50%;
+                border: transparent dashed 1px;
+                transition:0.3s ease all;
+              }
+              
+              &:hover {
+                &:before {
+                  animation: hoverSpin 8s linear infinite;
+                  width: 30px;
+                  height: 30px;
+                  border-color: $indigo;
                 }
+  
+                &:after {
+                  animation: hoverSpin 5s linear reverse infinite;
+                  width: 20px;
+                  height: 20px;
+                  border-color: $indigo;
+                }
+              }
             }
         }
 
@@ -49,9 +142,10 @@ body {
             width: 170px;
             text-align: right;
             
-            svg {
-              fill: $indigo;
-              transition: 0.3s ease fill;
+            i {
+              color: $indigo;
+              transition: 0.3s ease color;
+              font-size: 1.5rem;
             }
   
             a {
@@ -62,8 +156,8 @@ body {
               }
                 
               &:hover {
-                svg {
-                  fill: $indigo-translucent;
+                i {
+                  color: $indigo-translucent;
                 }
               }
             }
@@ -78,14 +172,13 @@ body {
             margin-top: 10px;        
   
             i {
-                svg {
-                    vertical-align: middle;
-                    fill: $indigo;
-                    transition: 0.4s ease fill;
-                }
-    
-                &.darkIcon svg {
-                    fill: $indigo-translucent;
+              vertical-align: middle;
+              color: $indigo;
+              transition: 0.4s ease color;
+              font-size: 1.7rem;
+              
+                &.darkIcon {
+                    color: $indigo-translucent;
                 }
             }
   
@@ -97,7 +190,7 @@ body {
                 border-radius: 13px;
                 margin: 0 10px;
                 border: none;
-                background: $indigo;
+                background: $indigo-translucent;
                 cursor: pointer;
                 padding: 0;
                 transition: 0.4s ease background;
@@ -138,8 +231,8 @@ body {
                     background: $blossom;
 
                     &+i {
-                        &.lightIcon svg {
-                            fill: $blossom;
+                        &.lightIcon {
+                            color: $blossom;
                         }
                     }
 
@@ -191,10 +284,16 @@ body {
     }
 
     main {
-        padding-top: 100px;
-        padding-bottom: 70px;
+        padding-top: 70px;
+        padding-bottom: 25px;
         min-height: 100vh;
         height: 100%;
+
+        section:before {
+          height: 80px;
+          content: "";
+          display:block;
+        }
 
         .head-wrap {
             border-radius: 50%;
@@ -202,6 +301,7 @@ body {
             height: 425px;
             padding: 0;
             overflow: hidden;
+            box-shadow: 0px 0px 20px 0px $indigo-translucent;
 
             img {
                 width: 100%;
@@ -213,6 +313,401 @@ body {
         .bio-text {
             width: calc(100% - 425px);
             padding-left: 75px;
+            font-size: 1.1rem;
+
+            .cta-wrap {
+              position: relative;
+              width: 280px;
+  
+              a {
+                z-index: 2;
+                position: relative;
+              }
+  
+              &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                right: -15px;
+                top: 0;
+                bottom: 0;
+                width: 30px;
+                height: 30px;
+                margin: auto;
+                border-radius: 50%;
+                border: $indigo dashed 1px;
+              }
+                
+              &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                left: -27px;
+                top: 0;
+                bottom: 0;
+                width: 54px;
+                height: 54px;
+                margin: auto;
+                border-radius: 50%;
+                border: $indigo dashed 1px;
+              }
+
+              &:hover {
+                &:before {
+                  animation: hoverSpin 8s linear infinite;
+                }
+  
+                &:after {
+                  animation: hoverSpin 5s linear reverse infinite;
+                }
+              }
+            }
+
+            .resume-cta {
+              color: white;
+              display: block;
+              width: 280px;
+              margin: 30px 0 0;
+              background: $indigo;
+              padding: 10px 15px;
+              font-size: 1.4rem;
+              text-decoration: none;
+              text-align: center;
+              border-radius: 5px;
+              border: 3px solid $indigo;
+              transition: 0.3s ease all;
+
+              i {
+                margin-left: 10px;
+              }
+
+              &:hover {
+                color: $indigo;
+                background-color: white;
+              }
+            }
+        }
+
+        .contact-block .contact-wrapper a {
+          text-decoration: none;
+          background: $indigo;
+          border: 3px solid $indigo;
+          transition: 0.3s ease all;
+
+          h3 {
+            color: white;
+            font-size: 1.4rem;
+          }
+
+          i {
+            color: white;
+            margin-top: 15px;
+            font-size: 2.4rem;
+          }
+
+          &:hover{
+            background: white;
+
+            h3 {
+              color: $indigo;
+            }
+
+            i {
+              color: $indigo;
+            }
+          }
+        }
+
+        .section-sub-header {
+          font-size: 1.2rem;
+        }
+
+        .skills-block {
+          .skill-wrapper {
+            .col-lg-4:first-of-type .card {
+              &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                left: -40px;
+                top: -40px;
+                width: 80px;
+                height: 80px;
+                margin: auto;
+                border-radius: 50%;
+                border: $indigo dashed 1px;
+              }
+              
+              &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                left: -15px;
+                top: -15px;
+                width: 30px;
+                height: 30px;
+                margin: auto;
+                border-radius: 50%;
+                border: $indigo dashed 1px;
+              }
+            }
+            
+            .col-lg-4:last-of-type .card {
+              &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                right: -25px;
+                bottom: -25px;
+                width: 50px;
+                height: 50px;
+                margin: auto;
+                border-radius: 50%;
+                border: $indigo dashed 1px;
+              }
+            }
+          }
+
+          .highlighted-skills i {
+            height: 60px;
+            width: auto;
+            font-size: 2.8rem;
+            padding-bottom: 20px;
+
+            &.fa-html5 {
+              color: #D94924;
+            }
+
+            &.fa-css3-alt {
+              color: #0068B1;
+            }
+
+            &.fa-js-square {
+              color: #F28F2B;
+            }
+
+            &.fa-git-alt {
+              color: #E44C30;
+            }
+            
+            &.fa-figma {
+              color: #000000;
+            }
+
+            &.fa-invision {
+              color: #F2305F;
+            }
+            
+            &.fa-python {
+              color: #356895;
+            }
+
+            svg {
+              height: 40px;
+              width: auto;
+              vertical-align: top;
+            }
+          }
+        }
+
+        .edu-block {
+          .cta-wrap {
+            position: relative;
+            width: 200px;
+            margin: auto;
+
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              z-index: -1;
+              right: -25px;
+              bottom: -25px;
+              width: 50px;
+              height: 50px;
+              margin: auto;
+              border-radius: 50%;
+              border: $indigo dashed 1px;
+            }
+            
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              z-index: -1;
+              right: -15px;
+              bottom: -15px;
+              width: 30px;
+              height: 30px;
+              margin: auto;
+              border-radius: 50%;
+              border: $indigo dashed 1px;
+            }
+
+            &:hover {
+              &:before {
+                animation: hoverSpin 8s linear infinite;
+              }
+
+              &:after {
+                animation: hoverSpin 5s linear reverse infinite;
+              }
+            }
+          }
+          
+          .col-lg-6:last-of-type {
+            .cta-wrap {
+              &:before {
+                right: -10px;
+                bottom: -10px;
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+
+        .projects-block {
+          .project-thumb {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.25rem 0.25rem 0 0;
+            background: $dark-grey;
+
+            &.ck-thumb img {
+              padding: 40px;
+            }
+
+            img {
+              object-fit: contain;
+              width: 101%;
+              height: 100%;
+            }
+          }
+
+          .cta-wrap {
+            position: relative;
+            width: 200px;
+            margin: auto;
+
+            button {
+              z-index: 2;
+              position: relative;
+            }
+
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              z-index: 1;
+              left: 10px;
+              bottom: -15px;
+              width: 30px;
+              height: 30px;
+              margin: auto;
+              border-radius: 50%;
+              border: $indigo dashed 1px;
+            }
+
+            &:hover {
+              &:before {
+                animation: hoverSpin 8s linear infinite;
+              }
+
+              &:after {
+                animation: hoverSpin 5s linear reverse infinite;
+              }
+            }
+          }
+        }
+
+        .contact-block .contact-wrapper {
+          .col-md-4 {
+            .card {
+              overflow:hidden;
+
+              &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                right: -60px;
+                bottom: -60px;
+                width: 120px;
+                height: 120px;
+                margin: auto;
+                border-radius: 50%;
+                border: $indigo dashed 1px;
+              }
+              
+              &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 1;
+                right: -40px;
+                bottom: -40px;
+                width: 80px;
+                height: 80px;
+                margin: auto;
+                border-radius: 50%;
+                border: $indigo dashed 1px;
+              }
+
+              &:hover {
+                &:before {
+                  animation: hoverSpin 8s linear infinite;
+                }
+
+                &:after {
+                  animation: hoverSpin 5s linear reverse infinite;
+                }
+              }
+            }
+          }
+
+          .col-md-4:first-of-type .card {
+            &:after {
+              left: -60px;
+              right: auto;
+              top: -60px;
+              bottom: auto;
+              width: 120px;
+              height: 120px;
+            }
+            
+            &:before {
+              right: -20px;
+              bottom: -20px;
+              width: 40px;
+              height: 40px;
+            }
+          }
+          
+          .col-md-4:last-of-type .card {
+            &:after {
+              right: -30px;
+              left: auto;
+              top: -30px;
+              bottom: auto;
+              width: 60px;
+              height: 60px;
+            }
+            
+            &:before {
+              right: -40px;
+              left: auto;
+              top: -40px;
+              bottom: auto;
+              width: 80px;
+              height: 80px;
+            }
+          }
         }
     }
 
@@ -220,13 +715,14 @@ body {
         width: 100%;
         
         .footNote {
-        font-size: 0.7rem;
-        color: $dark-grey;
-        text-align: center;
-            .highlight {
-                font-size: 0.9rem;
-                color: $dark-indigo; 
-            }
+          font-size: 0.7rem;
+          color: $dark-grey;
+          text-align: center;
+          padding: 10px 0;
+              .highlight {
+                  font-size: 0.9rem;
+                  color: $dark-indigo; 
+              }
         }
     }
 }
@@ -243,7 +739,7 @@ body {
     .seigaiha {
         position: absolute;
         max-width: 500px;
-        width: 40%;
+        width: calc((100vw - 1340px)/2);
         pointer-events: none;
         right: 0;
         bottom: 0;
@@ -254,7 +750,215 @@ body {
         stroke: $indigo-translucent;
         stroke-width: 2px;
         stroke-dasharray: 15 5;
-        /*stroke-dashoffset: 50; 0 - 100 range */
+        stroke-dashoffset: 0;
         transition: 0.6s ease all;
+
+        .animateFwd {
+          animation: bgAnimateFwd 2.5s linear forwards;
+        }
+        
+        .animateBwd {
+          animation: bgAnimateBwd 2.5s linear backwards;
+        }
     }
+}
+
+@keyframes bgAnimateFwd {
+  from{
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+@keyframes bgAnimateFwd {
+  from{
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hoverSpin {
+  from{
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body.dark {
+  background-color: $dark-indigo;
+  color: $font-dark;
+  
+  h1, h2, h3, h4, h5 {
+    color: $blossom-dark;
+  }
+
+  a {
+    color: $blossom;
+  }
+
+  a:hover {
+    color: $blossom-translucent;
+  }
+
+  .card {
+    border-color: $blossom-translucent;
+    background-color: $dark-indigo;
+  }
+
+  .navbar {
+    background: $dark-indigo;
+    box-shadow: 0 10px 20px -25px $blossom;
+  }
+
+  button.btn.btn-primary {
+    background-color: $blossom-dark;
+    border-color: $blossom-dark;
+    color: $dark-grey;
+
+    &:hover {
+      color: $blossom-dark;
+      background-color: $dark-indigo;
+    }
+  }
+
+  header {
+    nav {
+      .navbar-nav a.nav-link {
+        color: $blossom;
+
+        &:hover {
+          color: $blossom-translucent;
+        }
+      }
+      a.nav-name {
+        &:hover {
+          &:before {
+            border-color: $blossom;
+          }
+
+          &:after {
+            border-color: $blossom;
+          }
+        }
+      }
+    }
+
+    .socials {
+      
+      i {
+        color: $blossom;
+      }
+
+      a { 
+        &:hover {
+          i {
+            color: $blossom-translucent;
+          }
+        }
+      }
+    }
+
+    .toggle-wrap {    
+      i {
+        color: $blossom;
+          &.lightIcon {
+              color: $blossom-translucent;
+          }
+      }
+
+      .modeToggle {  
+          background: $blossom-translucent;
+
+          .toggleInner {
+  
+              .toggleCircle {
+                  left: calc(100% - 22px);
+                  
+                  &:after {
+                      border-top: 1px $indigo solid;
+                      border-bottom: 1px $indigo solid;
+                      transition: 0.4s ease border;
+                  }
+              }
+          }
+
+          &:hover {
+              background: $blossom;
+
+              &+i {
+                  &.lightIcon {
+                      color: $blossom;
+                  }
+              }
+
+              .toggleCircle:after { 
+                  border-top: 1px $blossom solid;
+                  border-bottom: 1px $blossom solid;
+              }
+          }
+      }
+
+      i {
+        &.darkIcon svg{
+          fill: $indigo;
+        }
+
+        &.lightIcon svg{
+          fill: $blossom;
+        }
+      }
+
+      &:hover {
+        i {
+          &.darkIcon svg{
+            fill: white;
+          }
+        }
+      }
+
+      .modeToggle {  
+        background: $blossom-translucent;
+
+        .toggleInner {
+          .toggleCircle {
+            left: calc(100% - 22px);
+            transform: rotate(180deg);
+
+            &:after {
+              border-top: 1px $blossom-dark solid;
+              border-bottom: 1px $blossom-dark solid;
+            }
+          }
+        } 
+        &:hover {
+          background: $blossom;
+
+          &+i {
+              &.lightIcon {
+                  color: $blossom;
+              }
+          }
+
+          .toggleCircle:after { 
+              border-top: 1px $blossom solid;
+              border-bottom: 1px $blossom solid;
+          }
+      }
+
+      }
+    }
+  }
+
+
+  .background {
+    svg {
+        stroke: $blossom-translucent;
+    }
+  }
 }
