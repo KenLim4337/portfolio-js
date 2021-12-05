@@ -13,13 +13,17 @@ $(document).ready(function(){
     slickInit('.projects-wrapper');
 
     //Regulate heights
-    heightRegulator('.highlighted-skills > .row', 991);
-    heightRegulator('.edu-block .card h2', 991);
-    heightRegulator('.edu-block .card h4', 991);
-    heightRegulator('.edu-block .card h5', 991);
-    heightRegulator('.edu-block .edu-body', 991);
-    heightRegulator('.project-thumb img');
-    heightRegulator('.project-desc');
+    var poller = setInterval(function(){
+        heightRegulator('.highlighted-skills > .row', 991);
+        heightRegulator('.edu-block .card h2', 991);
+        heightRegulator('.edu-block .card h4', 991);
+        heightRegulator('.edu-block .card h5', 991);
+        heightRegulator('.edu-block .edu-body', 991);
+    }, 500);
+
+    setTimeout(function(){
+        clearInterval(poller);
+    },3000);
 
     $('.modeToggle').click(function(){
         $('body').toggleClass('dark')
@@ -33,6 +37,8 @@ $(document).ready(function(){
         heightRegulator('.edu-block .card h4', 991);
         heightRegulator('.edu-block .card h5', 991);
         heightRegulator('.edu-block .edu-body', 991);
+        heightRegulator('.project-thumb img');
+        heightRegulator('.project-desc');
     });
 });
 
@@ -57,6 +63,15 @@ function slickInit(selector) {
         adaptiveHeight: true,
         dots: true
     });
+
+    var poller = setInterval(function(){
+        heightRegulator('.project-thumb img');
+        heightRegulator('.project-desc');
+    }, 500);
+
+    setTimeout(function(){
+        clearInterval(poller);
+    },3000);
 }
 
 

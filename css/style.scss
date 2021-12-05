@@ -42,6 +42,7 @@ body {
       border-color: $indigo-translucent;
       height: 100%;
       transition: 0.3s ease all;
+      background-color: #f9f9f9;
     }
 
     .navbar {
@@ -73,7 +74,6 @@ body {
             .navbar-nav a.nav-link {
               padding: 0 50px;
               font-family: 'Montserrat', sans-serif;
-              font-weight: 600;
               color: $indigo;
               text-decoration: none;
               transition: 0.3s ease all;
@@ -86,9 +86,10 @@ body {
 
             a.nav-name {
               font-family: 'Montserrat', sans-serif;
-              font-size: 1.4rem;
+              font-size: 1.75rem;
               padding: 0 40px;
               position: relative;
+              font-weight: 600;
 
               &:after {
                 content: "";
@@ -139,8 +140,10 @@ body {
         }
 
         .socials {
-            width: 170px;
             text-align: right;
+            padding-top: 3px;
+            padding-right: 20px;
+            border-right: 2px $dark-grey solid;
             
             i {
               color: $indigo;
@@ -149,7 +152,7 @@ body {
             }
   
             a {
-              margin: 0 5px;
+              margin: 0 10px;
               
               &:last-of-type {
                 margin-right: 0;
@@ -164,12 +167,11 @@ body {
         }
 
         .toggle-wrap {
-            width: 170px;
             display: flex;
             align-items: flex-end;
             text-align: right;
-            justify-content: flex-end;
-            margin-top: 10px;        
+            justify-content: flex-end;   
+            padding-left: 15px;  
   
             i {
               vertical-align: middle;
@@ -179,10 +181,14 @@ body {
               
                 &.darkIcon {
                     color: $indigo-translucent;
+                    order: 1;
                 }
+
+                &.lightIcon {
+                    order: 3;
+                }
+
             }
-  
-            
   
             .modeToggle {  
                 width: 42px;
@@ -193,7 +199,8 @@ body {
                 background: $indigo-translucent;
                 cursor: pointer;
                 padding: 0;
-                transition: 0.4s ease background;
+                transition: 0.4s ease all;
+                order: 2;
     
                 .toggleInner {
                     position: relative;
@@ -230,7 +237,7 @@ body {
                 &:hover {
                     background: $blossom;
 
-                    &+i {
+                    &~i {
                         &.lightIcon {
                             color: $blossom;
                         }
@@ -243,42 +250,6 @@ body {
                 }
             }
   
-            &.dark {
-                
-              i {
-                &.darkIcon svg{
-                  fill: $indigo;
-                }
-  
-                &.lightIcon svg{
-                  fill: $blossom;
-                }
-              }
-  
-              &:hover {
-                i {
-                  &.darkIcon svg{
-                    fill: white;
-                  }
-                }
-              }
-  
-              .modeToggle {  
-                background: $light-indigo;
-  
-                .toggleInner {
-                  .toggleCircle {
-                    left: calc(100% - 22px);
-                    transform: rotate(180deg);
-                    background: $blossom-translucent;
-                    &:after {
-                      border-top: 1px $light-indigo solid;
-                      border-bottom: 1px $light-indigo solid;
-                    }
-                  }
-                } 
-              }
-            }
         }
 
     }
@@ -290,7 +261,7 @@ body {
         height: 100%;
 
         section:before {
-          height: 80px;
+          height: 60px;
           content: "";
           display:block;
         }
@@ -337,6 +308,7 @@ body {
                 margin: auto;
                 border-radius: 50%;
                 border: $indigo dashed 1px;
+                transition: 0.3s ease all;
               }
                 
               &:before {
@@ -352,6 +324,7 @@ body {
                 margin: auto;
                 border-radius: 50%;
                 border: $indigo dashed 1px;
+                transition: 0.3s ease all;
               }
 
               &:hover {
@@ -399,12 +372,14 @@ body {
           h3 {
             color: white;
             font-size: 1.4rem;
+            transition: 0.3s ease all;
           }
 
           i {
             color: white;
             margin-top: 15px;
             font-size: 2.4rem;
+            transition: 0.3s ease all;
           }
 
           &:hover{
@@ -422,6 +397,9 @@ body {
 
         .section-sub-header {
           font-size: 1.2rem;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .skills-block {
@@ -808,7 +786,7 @@ body.dark {
 
   .card {
     border-color: $blossom-translucent;
-    background-color: $dark-indigo;
+    background-color: #201f5a;
   }
 
   .navbar {
@@ -822,7 +800,8 @@ body.dark {
     color: $dark-grey;
 
     &:hover {
-      color: $blossom-dark;
+      color: $blossom;
+      border-color: $blossom;
       background-color: $dark-indigo;
     }
   }
@@ -850,6 +829,7 @@ body.dark {
     }
 
     .socials {
+      border-color: $font-dark;
       
       i {
         color: $blossom;
@@ -867,58 +847,8 @@ body.dark {
     .toggle-wrap {    
       i {
         color: $blossom;
-          &.lightIcon {
-              color: $blossom-translucent;
-          }
-      }
-
-      .modeToggle {  
-          background: $blossom-translucent;
-
-          .toggleInner {
-  
-              .toggleCircle {
-                  left: calc(100% - 22px);
-                  
-                  &:after {
-                      border-top: 1px $indigo solid;
-                      border-bottom: 1px $indigo solid;
-                      transition: 0.4s ease border;
-                  }
-              }
-          }
-
-          &:hover {
-              background: $blossom;
-
-              &+i {
-                  &.lightIcon {
-                      color: $blossom;
-                  }
-              }
-
-              .toggleCircle:after { 
-                  border-top: 1px $blossom solid;
-                  border-bottom: 1px $blossom solid;
-              }
-          }
-      }
-
-      i {
-        &.darkIcon svg{
-          fill: $indigo;
-        }
-
-        &.lightIcon svg{
-          fill: $blossom;
-        }
-      }
-
-      &:hover {
-        i {
-          &.darkIcon svg{
-            fill: white;
-          }
+        &.lightIcon {
+            color: $blossom-translucent;
         }
       }
 
@@ -933,32 +863,182 @@ body.dark {
             &:after {
               border-top: 1px $blossom-dark solid;
               border-bottom: 1px $blossom-dark solid;
+              transition: 0.4s ease border;
             }
           }
         } 
-        &:hover {
-          background: $blossom;
 
-          &+i {
+        &:hover {
+          background: $light-indigo;
+
+          &~i {
               &.lightIcon {
-                  color: $blossom;
+                  color: $blossom-translucent;
+              }
+              &.darkIcon {
+                  color: $light-indigo;
               }
           }
 
           .toggleCircle:after { 
-              border-top: 1px $blossom solid;
-              border-bottom: 1px $blossom solid;
+              border-top: 1px $light-indigo solid;
+              border-bottom: 1px $light-indigo solid;
           }
-      }
+        }
 
       }
     }
   }
 
+  main {
+    .head-wrap {
+      box-shadow: 0px 0px 30px 5px $blossom-translucent;
+    }
+
+    .bio-text {
+      .cta-wrap {
+        &:after {
+          border-color: $blossom;
+        }
+        
+        &:before {
+          border-color: $blossom;
+        }
+      }
+
+      .resume-cta {
+        color: $dark-indigo;
+        background: $blossom-dark;
+        border: 3px solid $blossom-dark;
+
+        &:hover {
+          color: $blossom;
+          border-color: $blossom;
+          background-color: $dark-indigo;
+        }
+      }
+    }
+
+    .contact-block .contact-wrapper a {
+      background: $blossom-dark;
+      border-color: $blossom-dark;
+
+      h3 {
+        color: $dark-indigo;
+      }
+
+      i {
+        color: $dark-indigo;
+      }
+
+      &:hover{
+        background: $dark-indigo;
+        border-color: $blossom;
+
+        h3 {
+          color: $blossom;
+        }
+
+        i {
+          color: $blossom;
+        }
+      }
+    }
+
+    .skills-block {
+      .skill-wrapper {
+        .col-lg-4:first-of-type .card {
+          &:after {
+            border-color: $blossom;
+          }
+          
+          &:before {
+            border-color: $blossom;
+          }
+        }
+        
+        .col-lg-4:last-of-type .card {
+          &:after {
+            border-color: $blossom;
+          }
+        }
+      }
+
+      .highlighted-skills i {
+        &.fa-figma {
+          color: white;
+        }
+
+        svg {
+          height: 40px;
+          width: auto;
+          vertical-align: top;
+        }
+      }
+    }
+
+    .edu-block {
+      .cta-wrap {
+        &:after {
+          border-color: $blossom;
+        }
+        
+        &:before {
+          border-color: $blossom;
+        }
+      }
+    }
+
+    .projects-block {
+      .project-thumb {
+        background-color: #201f5a;
+      }
+
+      .cta-wrap {
+        &:after {
+          border-color: $blossom;
+        }
+      }
+    }
+
+    .contact-block .contact-wrapper {
+      .col-md-4 {
+        .card {
+          &:after {
+            border-color: $blossom-dark;
+          }
+          
+          &:before {
+            border-color: $blossom-dark;
+          }
+
+          &:hover {
+            &:before {
+              border-color: $blossom;
+            }
+
+            &:after {
+              border-color: $blossom;
+            }
+          }
+        }
+      }
+    }  
+  }
+
+  footer {
+      
+    .footNote {
+      color: $font-dark;
+          .highlight {
+              color: $blossom; 
+          }
+      }
+  }
 
   .background {
     svg {
-        stroke: $blossom-translucent;
+        stroke: $blossom;
     }
   }
 }
