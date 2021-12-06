@@ -449,7 +449,7 @@ body main .bio-text {
     width: 100%;
     padding: 1rem 15px;
     margin-top: 10px;
-    text-align: justify;
+    text-align: center;
   }
 }
 
@@ -684,7 +684,7 @@ body main .skills-block .highlighted-skills i svg {
     margin-top: 50px !important;
   }
   body main .edu-block .edu-body {
-    text-align: justify;
+    text-align: center;
   }
 }
 
@@ -768,7 +768,7 @@ body main .projects-block .project-thumb img {
 
 @media screen and (max-width: 991px) {
   body main .projects-block .project-desc {
-    text-align: justify;
+    text-align: center;
   }
 }
 
