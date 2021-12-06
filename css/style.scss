@@ -49,6 +49,10 @@ body {
       background: white;
       box-shadow: 0 10px 20px -25px $dark-grey;
       transition: 0.3s ease all;
+      
+      @media screen and (max-width: 991px) {
+        box-shadow: 0 10px 20px -20px $dark-grey;
+      }
     }
 
     button.btn.btn-primary {
@@ -62,6 +66,10 @@ body {
       &:hover {
         color: $indigo;
         background-color: white;
+      }
+
+      &:focus {
+        box-shadow: none;
       }
     }
 
@@ -84,6 +92,42 @@ body {
               }
             }
 
+            .mobo-toggle {
+              position: relative;
+              width: 26px;
+              height: 22px;
+              display: none;
+              cursor: pointer;
+              overflow: hidden;
+              border-radius: 4px;
+              
+              div {
+                width: 26px;
+                height: 4px;
+                background: $indigo;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                transition: 0.3s ease all;
+
+                &.top {
+                  top: 0;
+                }
+                &.mid {
+                  top: 0;
+                  bottom: 0;
+                }
+                &.bot {
+                  bottom: 0;
+                }
+              }
+
+              @media screen and (max-width: 991px) {
+                display: block;
+              }
+            }
+
             a.nav-name {
               font-family: 'Montserrat', sans-serif;
               font-size: 1.75rem;
@@ -96,8 +140,8 @@ body {
                 display: block;
                 position: absolute;
                 z-index: 1;
-                left: 15px;
-                top: -10px;
+                right: 20px;
+                top: -15px;
                 width: 0px;
                 height: 0px;
                 margin: auto;
@@ -112,7 +156,7 @@ body {
                 position: absolute;
                 z-index: 1;
                 left: 0px;
-                bottom: -10px;
+                bottom: 0px;
                 width: 0px;
                 height: 0px;
                 margin: auto;
@@ -137,6 +181,40 @@ body {
                 }
               }
             }
+            
+      
+            @media screen and (max-width: 991px) {
+              padding: 0 15px;
+              .nav-right {
+                margin-left: auto;
+              }
+
+              .navbar-collapse {
+                position: fixed;
+                z-index: 101;
+                top: 46px;
+                display: block !important;
+                background-color: white;
+                height: 100vh;
+                width: calc(100vw - 60px);
+                max-width: 400px;
+                padding-top: 20px;
+                opacity: 0;
+                pointer-events: none;
+                left: -100vw;
+                transition: 0.3s ease all;
+
+                a.nav-name{
+                  display: none;
+                }
+
+                ul {
+                  .nav-link {
+                    padding: 10px 15px;
+                  }
+                }
+              }
+            }
         }
 
         .socials {
@@ -145,6 +223,10 @@ body {
             padding-right: 20px;
             border-right: 2px $dark-grey solid;
             
+            @media screen and (max-width:991px) {
+              padding-right: 13px;
+            }
+
             i {
               color: $indigo;
               transition: 0.3s ease color;
@@ -154,6 +236,10 @@ body {
             a {
               margin: 0 10px;
               
+              @media screen and (max-width:991px) {
+                margin: 0 5px;
+              }
+
               &:last-of-type {
                 margin-right: 0;
               }
@@ -173,6 +259,10 @@ body {
             justify-content: flex-end;   
             padding-left: 15px;  
   
+            @media screen and (max-width:991px) {
+              padding-left: 8px;
+            }
+
             i {
               vertical-align: middle;
               color: $indigo;
@@ -201,6 +291,10 @@ body {
                 padding: 0;
                 transition: 0.4s ease all;
                 order: 2;
+                
+                @media screen and (max-width:991px) {
+                  margin: 0 5px;
+                }
     
                 .toggleInner {
                     position: relative;
@@ -261,9 +355,15 @@ body {
         height: 100%;
 
         section:before {
-          height: 60px;
+          height: 70px;
           content: "";
           display:block;
+        }
+        
+        @media screen and (max-width: 991px) {
+          .bio-block > .row {
+            display: block;
+          }
         }
 
         .head-wrap {
@@ -279,6 +379,20 @@ body {
                 height: 100%;
                 object-fit: cover;
             }
+
+            @media screen and (max-width: 1199px) {
+              width: 325px;
+              height: 325px;
+            }
+            
+            @media screen and (max-width: 991px) {
+              margin: auto;
+            }
+            
+            @media screen and (max-width: 370px) {
+              width: 275px;
+              height: 275px;
+            }
         }
 
         .bio-text {
@@ -286,9 +400,24 @@ body {
             padding-left: 75px;
             font-size: 1.1rem;
 
+            @media screen and (max-width: 1199px) {
+              width: calc(100% - 325px);
+            }
+            
+            @media screen and (max-width: 991px) {
+              width: 100%;
+              padding: 1rem 15px;
+              margin-top: 10px;
+              text-align: justify;
+            }
+
             .cta-wrap {
               position: relative;
-              width: 280px;
+              width: 240px;
+              
+              @media screen and (max-width: 991px) {
+                margin: auto;
+              }
   
               a {
                 z-index: 2;
@@ -341,7 +470,7 @@ body {
             .resume-cta {
               color: white;
               display: block;
-              width: 280px;
+              width: 240px;
               margin: 30px 0 0;
               background: $indigo;
               padding: 10px 15px;
@@ -400,6 +529,11 @@ body {
           max-width: 900px;
           margin-left: auto;
           margin-right: auto;
+
+          @media screen and (max-width: 991px) {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+          }
         }
 
         .skills-block {
@@ -431,6 +565,7 @@ body {
                 margin: auto;
                 border-radius: 50%;
                 border: $indigo dashed 1px;
+                transition: 0.3s ease all;
               }
             }
             
@@ -447,6 +582,7 @@ body {
                 margin: auto;
                 border-radius: 50%;
                 border: $indigo dashed 1px;
+                transition: 0.3s ease all;
               }
             }
           }
@@ -456,6 +592,7 @@ body {
             width: auto;
             font-size: 2.8rem;
             padding-bottom: 20px;
+            transition: 0.3s ease all;
 
             &.fa-html5 {
               color: #D94924;
@@ -494,6 +631,21 @@ body {
         }
 
         .edu-block {
+          @media screen and (max-width:991px) {
+            > .row > .col-lg-6 {
+              padding-left: 15px !important;
+              padding-right: 15px !important;
+
+              &:last-of-type {
+                margin-top: 50px !important;
+              }
+            }
+
+            .edu-body {
+              text-align: justify;
+            }
+          }
+
           .cta-wrap {
             position: relative;
             width: 200px;
@@ -511,6 +663,7 @@ body {
               margin: auto;
               border-radius: 50%;
               border: $indigo dashed 1px;
+              transition: 0.3s ease all;
             }
             
             &:before {
@@ -525,6 +678,7 @@ body {
               margin: auto;
               border-radius: 50%;
               border: $indigo dashed 1px;
+              transition: 0.3s ease all;
             }
 
             &:hover {
@@ -568,6 +722,12 @@ body {
             }
           }
 
+          @media screen and (max-width: 991px) {
+            .project-desc {
+              text-align: justify;
+            }
+          }
+
           .cta-wrap {
             position: relative;
             width: 200px;
@@ -605,7 +765,22 @@ body {
         }
 
         .contact-block .contact-wrapper {
+          
+          @media screen and (max-width: 991px) {
+            display: block;
+            margin: 0 !important;
+          }
+
           .col-md-4 {
+            
+            @media screen and (max-width: 991px) {
+              margin-bottom: 20px;
+              width: 100%;
+              max-width: 400px;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            
             .card {
               overflow:hidden;
 
@@ -687,6 +862,153 @@ body {
             }
           }
         }
+
+        .slick-prev:before, .slick-next:before {
+          color: $indigo;
+          transition: 0.3s ease all;
+        }
+
+        @media screen and (max-width: 991px) {
+          .slick-prev {
+            left: -8px;
+          } 
+          .slick-next {
+            right: -8px;
+          }
+        }
+
+        .slick-dots {
+          width: calc(100% - 24px);
+          li {
+            &.slick-active button:before {
+              color: $indigo;
+            }
+
+            button:before {
+              color: $indigo; 
+              transition: 0.3s ease all;
+            }
+          }
+        }
+    }
+
+    .modal {
+      
+      .btn-close {
+        background: none;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 20px;
+          height: 2px;
+          background: $indigo;
+          transform: rotate(-45deg);
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 20px;
+          height: 2px;
+          background: $indigo;
+          transform: rotate(45deg);
+        }
+
+        &:hover {
+          &:before {
+            background-color: $indigo-translucent;
+          }
+  
+          &:after {
+            background-color: $indigo-translucent;
+          }
+        }
+      }
+
+      .btn.btn-primary {
+        padding: 10px 0;
+        width: 240px;
+        display: block;
+        margin: auto;
+        background-color: $indigo;
+        border-color: $indigo;
+  
+        &:hover {
+          color: $indigo;
+          background-color: white;
+        }
+  
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .modal-dialog {
+        max-width: 800px;
+      }
+
+      .modal-content {
+        background-color: #f9f9f9;
+        border-color: $indigo-translucent;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .modal-header {
+        border-bottom: none;
+
+        h5.modal-title {
+          opacity: 0;
+          transition: 0.3s ease all;
+        }
+      }
+
+      .modal-body {
+        .modal-loading {
+          margin: 20px auto 60px;
+          text-align: center;
+
+          svg {
+            rect {
+              fill: #f9f9f9;
+            }
+
+            path {
+              fill: $indigo-translucent;
+            }
+
+            path:first-of-type {
+              fill: $indigo;
+            }
+          }
+        }
+      }
+
+      &.loaded {
+        h5.modal-title {
+          opacity: 1;
+        }
+
+        .modal-loading {
+          display: none;
+        }
+      }
     }
 
     footer {
@@ -703,6 +1025,24 @@ body {
               }
         }
     }
+
+    .mobo-overlay {
+      position: fixed;
+      z-index: 100;
+      background-color: rgba(0,0,0,0.6);
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      transition: 0.3s ease all;
+      opacity: 0;
+      pointer-events: none;
+
+      @media screen and (max-width: 991px) {
+        display: block;
+      }
+    }
 }
 
 .background {
@@ -717,7 +1057,7 @@ body {
     .seigaiha {
         position: absolute;
         max-width: 500px;
-        width: calc((100vw - 1340px)/2);
+        width: calc((100vw - 1240px)/2);
         pointer-events: none;
         right: 0;
         bottom: 0;
@@ -738,6 +1078,30 @@ body {
         .animateBwd {
           animation: bgAnimateBwd 2.5s linear backwards;
         }
+    }
+
+    @media screen and (max-width: 1800px) {
+      .seigaiha {
+        width: 300px;
+
+        .hide-first {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      .seigaiha {
+        width: 200px;
+      }
+    }
+    
+    @media screen and (max-height: 900px) {
+      .seigaiha {
+        .hide-height {
+          display: none;
+        }
+      }
     }
 }
 
@@ -792,6 +1156,10 @@ body.dark {
   .navbar {
     background: $dark-indigo;
     box-shadow: 0 10px 20px -25px $blossom;
+
+    @media screen and (max-width: 991px) {
+      box-shadow: 0 10px 20px -20px $blossom;
+    }
   }
 
   button.btn.btn-primary {
@@ -815,6 +1183,11 @@ body.dark {
           color: $blossom-translucent;
         }
       }
+      .mobo-toggle {
+        div {
+          background-color: $blossom;
+        }
+      }
       a.nav-name {
         &:hover {
           &:before {
@@ -824,6 +1197,11 @@ body.dark {
           &:after {
             border-color: $blossom;
           }
+        }
+      }
+      @media screen and (max-width: 991px) {
+        .navbar-collapse {
+          background-color: $dark-indigo;
         }
       }
     }
@@ -888,6 +1266,7 @@ body.dark {
 
       }
     }
+
   }
 
   main {
@@ -966,7 +1345,11 @@ body.dark {
 
       .highlighted-skills i {
         &.fa-figma {
-          color: white;
+          color: $font-dark;
+        }
+        
+        &[data-bs-original-title="Google Analytics"] g:not(#g6628) path {
+          fill: $font-dark !important;
         }
 
         svg {
@@ -1024,6 +1407,87 @@ body.dark {
         }
       }
     }  
+
+    .slick-prev:before, .slick-next:before {
+      color: $blossom;
+    }
+
+    .slick-dots {
+      li {
+        &.slick-active button:before {
+          color: $blossom;
+        }
+
+        button:before {
+          color: $blossom; 
+        }
+      }
+    }
+  }
+
+  .modal {
+    .btn-close {
+
+      &:before {
+        background-color: $blossom;
+      }
+
+      &:after {
+        background-color: $blossom;
+      }
+
+      &:hover {
+        &:before {
+          background-color: $blossom-translucent;
+        }
+
+        &:after {
+          background-color: $blossom-translucent;
+        }
+      }
+    }
+    .btn.btn-primary {
+      background-color: $blossom-dark;
+      border-color: $blossom-dark;
+      color: $dark-indigo;
+
+      &:hover {
+        color: $blossom;
+        background-color: $dark-indigo;
+        border-color: $blossom;
+      }
+    }
+
+    .modal-content {
+      background-color: #201f5a;
+      border-color: $blossom-translucent;
+    }
+
+    .modal-header {
+      h5.modal-title {
+        color: $blossom-dark;
+      }
+    }
+
+    .modal-body {
+      .modal-loading {
+        svg {
+          rect {
+            fill: #201f5a;
+          }
+
+          path {
+            fill: $blossom-translucent;
+          }
+
+          path:first-of-type {
+            fill: $blossom;
+          }
+        }
+      }
+      
+    }
+    
   }
 
   footer {
@@ -1040,5 +1504,46 @@ body.dark {
     svg {
         stroke: $blossom;
     }
+  }
+}
+
+body.show-menu {
+  header {
+    nav {
+      .mobo-toggle {
+        border-radius: 0;
+        
+        div {
+          &.top {
+            top: 0;
+            bottom: 0;
+            transform: rotate(225deg);
+          }
+          &.mid {
+            top: 0;
+            bottom: 0;
+            transform: rotate(45deg);
+          }
+          &.bot {
+            top: 0;
+            bottom: 0;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        .navbar-collapse {
+          opacity: 1;
+          pointer-events: all;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .mobo-overlay {
+    opacity: 1;
+    pointer-events: all;
   }
 }

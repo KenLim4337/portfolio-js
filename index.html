@@ -32,6 +32,12 @@
 
     <header>
         <nav class="navbar fixed-top navbar-expand-lg">
+            <div class="mobo-toggle">
+                <div class="top"></div>
+                <div class="mid"></div>
+                <div class="bot"></div>
+            </div>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <a href="#bio" class="nav-name">
                     Jude Lim
@@ -56,7 +62,7 @@
                 </ul>
             </div>
 
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center nav-right">
                 <div class="d-flex justify-content-end socials">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jude-lim-9a2612101/">
                         
@@ -1253,7 +1259,7 @@
                     </p>
                     
                     <div class="cta-wrap">
-                        <button type="button" class="btn btn-primary edu-cta">Details</button>
+                        <button type="button" class="btn btn-primary edu-cta" data-bs-content="edu-vt" data-bs-toggle="modal" data-bs-target="#contentModal">Details</button>
                     </div>
                 </div>
 
@@ -1269,7 +1275,7 @@
                     </p>
                     
                     <div class="cta-wrap">
-                        <button type="button" class="btn btn-primary edu-cta">Details</button>
+                        <button type="button" class="btn btn-primary edu-cta" data-bs-content="edu-uq" data-bs-toggle="modal" data-bs-target="#contentModal">Details</button>
                     </div>
                 </div>
             </div>
@@ -1287,7 +1293,7 @@
 
                 <div class="projects-wrapper mt-3">
                     <div class="project-tile p-3" data-tile-id="0">
-                        <div class="card rounded pb-4 project-inner">
+                        <div class="card rounded pb-5 project-inner">
                             <div class="project-thumb">
                                 <img src="img/cwps_thumb.png" alt="Civil War Photo Sleuth Thumbnail">
                             </div>
@@ -1298,15 +1304,15 @@
                                 My first project with the Crowd Intelligence Lab at Virginia Tech. Here I designed and developed a new dashboard for Civil War Photo Sleuth, one of the lab's main projects.
                             </div>
 
-                            <div class="cta-wrap mt-3">
-                                <button type="button" class="btn btn-primary project-cta">
+                            <div class="cta-wrap mt-4">
+                                <button type="button" class="btn btn-primary project-cta" data-bs-content="proj-cwps" data-bs-toggle="modal" data-bs-target="#contentModal">
                                     Read More
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="project-tile p-3" data-tile-id="1">
-                        <div class="card rounded pb-4 project-inner">
+                        <div class="card rounded pb-5 project-inner">
                             <div class="project-thumb ck-thumb">
                                 <img src="img/ck_thumb.png" alt="Conversion Kings Thumbnail">
                             </div>
@@ -1317,15 +1323,15 @@
                                 Working at Conversion Kings allowed me to work on A/B tests for a wide range of clients both local and international. As a developer I helped develop, maintain, test, and analyze these tests to help clients improve their user experience and conversion rate.
                             </div>
 
-                            <div class="cta-wrap mt-3">
-                                <button type="button" class="btn btn-primary project-cta">
+                            <div class="cta-wrap mt-4">
+                                <button type="button" class="btn btn-primary project-cta" data-bs-content="proj-ck" data-bs-toggle="modal" data-bs-target="#contentModal">
                                     Read More
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="project-tile p-3" data-tile-id="2">
-                        <div class="card rounded pb-4 project-inner">
+                        <div class="card rounded pb-5 project-inner">
                             <div class="project-thumb">
                                 <img src="img/covidash_thumb.png" alt="Covidash Thumbnail">
                             </div>
@@ -1336,15 +1342,15 @@
                                 CoviDash is a Django application I developed for a first semester course in my master's degree. In this app, users are able to freely post, fact-check, and discuss various COVID-19 related rumours. 
                             </div>
 
-                            <div class="cta-wrap mt-3">
-                                <button type="button" class="btn btn-primary project-cta">
+                            <div class="cta-wrap mt-4">
+                                <button type="button" class="btn btn-primary project-cta" data-bs-content="proj-cd" data-bs-toggle="modal" data-bs-target="#contentModal">
                                     Read More
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="project-tile p-3" data-tile-id="3">
-                        <div class="card rounded pb-4 project-inner">
+                        <div class="card rounded pb-5 project-inner">
                             <div class="project-thumb">
                                 <img src="img/thesis_thumb.png" alt="Thesis Thumbnail">
                             </div>
@@ -1356,15 +1362,17 @@
                                 Normalization of Interdisciplinary Collaboration".
                             </div>
 
-                            <div class="cta-wrap mt-3">
-                                <button type="button" class="btn btn-primary project-cta">
-                                    Read More
-                                </button>
+                            <div class="cta-wrap mt-4">
+                                <a href="https://github.com/KenLim4337/thesisproject" target="_blank" rel="noopener noreferrer">
+                                    <button type="button" class="btn btn-primary project-cta">
+                                        Details
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="project-tile p-3" data-tile-id="4">
-                        <div class="card rounded pb-4 project-inner">
+                        <div class="card rounded pb-5 project-inner">
                             <div class="project-thumb">
                                 <img src="img/rackcity_thumb.png" alt="Rack City Thumbnail">
                             </div>
@@ -1375,10 +1383,12 @@
                                 Rack City is a project I worked on for Govhack 2017. It is an application that promotes exploration of Brisbane art installations through the usage of public bike racks. The application received an honourable mention for a national award.
                             </div>
 
-                            <div class="cta-wrap mt-3">
-                                <button type="button" class="btn btn-primary project-cta">
-                                    Read More
-                                </button>
+                            <div class="cta-wrap mt-4">
+                                <a href="https://github.com/Feeandthelads/rackcity" target="_blank" rel="noopener noreferrer">
+                                    <button type="button" class="btn btn-primary project-cta">
+                                        Details
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -1440,14 +1450,14 @@
                 <path d="M230,600 A1,1 0 1,1 370,600 L370,600" />
                 <path d="M260,600 A1,1 0 1,1 340,600 L340,600" />
 
-                <path class="d-none d-xl-block" d="M0,600 A1,1 0 1,1 200,600 L200,600" />
-                <path class="d-none d-xl-block" d="M30,600 A1,1 0 1,1 170,600 L170,600" />
-                <path class="d-none d-xl-block" d="M60,600 A1,1 0 1,1 140,600 L140,600" />
+                <path class="hide-first" d="M0,600 A1,1 0 1,1 200,600 L200,600" />
+                <path class="hide-first" d="M30,600 A1,1 0 1,1 170,600 L170,600" />
+                <path class="hide-first" d="M60,600 A1,1 0 1,1 140,600 L140,600" />
 
 
 
-                <path class="d-none d-xl-block" d="M100,500 A1,1 0 1,1 300,500 L300,500" />
-                <path class="d-none d-xl-block" d="M140,505 A1,1 0 1,1 260,505 L260,505" />
+                <path class="hide-first" d="M100,500 A1,1 0 1,1 300,500 L300,500" />
+                <path class="hide-first" d="M140,505 A1,1 0 1,1 260,505 L260,505" />
 
                 <path d="M300,500 A1,1 0 1,1 500,500 L500,500" />
                 <path d="M330,505 A1,1 0 1,1 470,505 L470,505" />
@@ -1460,38 +1470,58 @@
 
 
 
-                <path class="d-none d-xl-block" d="M200,400 A1,1 0 1,1 400,400 L400,400" />
-                <path class="d-none d-xl-block" d="M220,405 A1,1 0 1,1 380,405 L380,405" />
-                <path class="d-none d-xl-block" d="M240,410 A1,1 0 1,1 360,410 L360,410" />
-                <path class="d-none d-xl-block" d="M260,415 A1,1 0 1,1 340,415 L340,415" />
+                <path class="hide-first" d="M200,400 A1,1 0 1,1 400,400 L400,400" />
+                <path class="hide-first" d="M220,405 A1,1 0 1,1 380,405 L380,405" />
+                <path class="hide-first" d="M240,410 A1,1 0 1,1 360,410 L360,410" />
+                <path class="hide-first" d="M260,415 A1,1 0 1,1 340,415 L340,415" />
 
-                <path d="M400,400 A1,1 0 1,1 600,400 L600,400" />
-                <path d="M430,405 A1,1 0 1,1 570,405 L570,405" />
-                <path d="M460,415 A1,1 0 1,1 540,405 L540,415" />
-
-
-
-                <path class="d-none d-xl-block" d="M300,300 A1,1 0 1,1 500,300 L500,300" />
-                <path class="d-none d-xl-block" d="M340,305 A1,1 0 1,1 460,305 L460,305" />
-
-                <path d="M500,300 A1,1 0 1,1 700,300 L700,300" />
-                <path d="M530,305 A1,1 0 1,1 670,305 L670,305" />
-                <path d="M560,315 A1,1 0 1,1 640,315 L640,315" />
+                <path class="hide-height" d="M400,400 A1,1 0 1,1 600,400 L600,400" />
+                <path class="hide-height" d="M430,405 A1,1 0 1,1 570,405 L570,405" />
+                <path class="hide-height" d="M460,415 A1,1 0 1,1 540,405 L540,415" />
 
 
+                <path class="hide-first" d="M300,300 A1,1 0 1,1 500,300 L500,300" />
+                <path class="hide-first" d="M340,305 A1,1 0 1,1 460,305 L460,305" />
 
-                <path class="d-none d-xl-block" d="M400,200 A1,1 0 1,1 600,200 L600,200" />
-                <path class="d-none d-xl-block" d="M420,205 A1,1 0 1,1 580,205 L580,205" />
-                <path class="d-none d-xl-block" d="M440,210 A1,1 0 1,1 560,210 L560,210" />
-                <path class="d-none d-xl-block" d="M460,215 A1,1 0 1,1 540,215 L540,215" />
+                <path class="hide-height" d="M500,300 A1,1 0 1,1 700,300 L700,300" />
+                <path class="hide-height" d="M530,305 A1,1 0 1,1 670,305 L670,305" />
+                <path class="hide-height" d="M560,315 A1,1 0 1,1 640,315 L640,315" />
 
 
 
-                <path class="d-none d-xl-block" d="M500,100 A1,1 0 1,1 700,100 L700,100" />
-                <path class="d-none d-xl-block" d="M540,105 A1,1 0 1,1 660,105 L660,105" />
+                <path class="hide-first" d="M400,200 A1,1 0 1,1 600,200 L600,200" />
+                <path class="hide-first" d="M420,205 A1,1 0 1,1 580,205 L580,205" />
+                <path class="hide-first" d="M440,210 A1,1 0 1,1 560,210 L560,210" />
+                <path class="hide-first" d="M460,215 A1,1 0 1,1 540,215 L540,215" />
+
+
+
+                <path class="hide-first" d="M500,100 A1,1 0 1,1 700,100 L700,100" />
+                <path class="hide-first" d="M540,105 A1,1 0 1,1 660,105 L660,105" />
             </svg>
         </div>
     </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="contentModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content p-3">
+            <div class="modal-header px-3">
+            <h5 class="modal-title" id="modalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-inner">
+
+                </div>
+                <div class="modal-loading">
+                    <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="64px" height="64px" viewBox="0 0 128 128" xml:space="preserve"><rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF" /><g><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#000000"/><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#9c9c9c" transform="rotate(45, 64, 64)"/><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#9c9c9c" transform="rotate(90, 64, 64)"/><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#9c9c9c" transform="rotate(135, 64, 64)"/><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#9c9c9c" transform="rotate(180, 64, 64)"/><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#9c9c9c" transform="rotate(225, 64, 64)"/><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#9c9c9c" transform="rotate(270, 64, 64)"/><path d="M116.3 60.18a52.28 52.28 0 0 0-12.64-30.45l8.06-8.06a63.6 63.6 0 0 1 15.97 38.5h-11.4z" fill="#9c9c9c" transform="rotate(315, 64, 64)"/><animateTransform attributeName="transform" type="rotate" values="0 64 64;45 64 64;90 64 64;135 64 64;180 64 64;225 64 64;270 64 64;315 64 64" calcMode="discrete" dur="720ms" repeatCount="indefinite"></animateTransform></g></svg>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="mobo-overlay"></div>
 </body>
 
 </html>
