@@ -28,6 +28,11 @@ body {
       transition: 0.3s ease all;
     }
 
+    h1 {
+      font-weight: 600;
+      color: $indigo;
+    }
+
     a {
       color: $indigo;
       text-decoration: none;
@@ -705,6 +710,14 @@ body {
         }
 
         .projects-block {
+          
+
+          .projects-wrapper {
+            @media screen and (max-width: 991px) {
+              padding: 0;
+            }
+          }
+
           .project-thumb {
             width: 100%;
             overflow: hidden;
@@ -866,14 +879,21 @@ body {
         .slick-prev:before, .slick-next:before {
           color: $indigo;
           transition: 0.3s ease all;
+          font-size: 28px;
         }
 
         @media screen and (max-width: 991px) {
           .slick-prev {
-            left: -8px;
+            left: -5px;
+            z-index: 10;
           } 
           .slick-next {
-            right: -8px;
+            right: 5px;
+            z-index: 10;
+          }
+          
+          .slick-prev:before, .slick-next:before {
+            opacity: 1;
           }
         }
 

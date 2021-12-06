@@ -172,7 +172,7 @@ function modalGen(key, callback) {
     $.ajax({
         method: "GET",
         url: url,
-        dataType: "html"
+        dataType: 'html'
     }).done(function( data ){
         $('.modal .modal-inner').append(data);
         callback();

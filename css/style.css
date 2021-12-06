@@ -17,6 +17,11 @@ body h1, body h2, body h3, body h4, body h5 {
   transition: 0.3s ease all;
 }
 
+body h1 {
+  font-weight: 600;
+  color: #28459D;
+}
+
 body a {
   color: #28459D;
   text-decoration: none;
@@ -737,6 +742,12 @@ body main .edu-block .col-lg-6:last-of-type .cta-wrap:before {
   height: 20px;
 }
 
+@media screen and (max-width: 991px) {
+  body main .projects-block .projects-wrapper {
+    padding: 0;
+  }
+}
+
 body main .projects-block .project-thumb {
   width: 100%;
   overflow: hidden;
@@ -891,14 +902,20 @@ body main .slick-prev:before, body main .slick-next:before {
   color: #28459D;
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
+  font-size: 28px;
 }
 
 @media screen and (max-width: 991px) {
   body main .slick-prev {
-    left: -8px;
+    left: -5px;
+    z-index: 10;
   }
   body main .slick-next {
-    right: -8px;
+    right: 5px;
+    z-index: 10;
+  }
+  body main .slick-prev:before, body main .slick-next:before {
+    opacity: 1;
   }
 }
 
