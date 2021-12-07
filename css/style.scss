@@ -412,7 +412,7 @@ body {
             @media screen and (max-width: 991px) {
               width: 100%;
               padding: 1rem 15px;
-              margin-top: 10px;
+              margin-top: 20px;
               text-align: center;
             }
 
@@ -539,6 +539,11 @@ body {
             padding-left: 15px !important;
             padding-right: 15px !important;
           }
+          
+          @media screen and (max-width: 500px) {
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+          }
         }
 
         .skills-block {
@@ -648,6 +653,13 @@ body {
 
             .edu-body {
               text-align: center;
+            }
+          }
+
+          @media screen and (max-width: 500px) {
+            > .row > .col-lg-6 {
+              padding-left: 0px !important;
+              padding-right: 0px !important;
             }
           }
 
@@ -888,7 +900,7 @@ body {
             z-index: 10;
           } 
           .slick-next {
-            right: 5px;
+            right: 4px;
             z-index: 10;
           }
           
@@ -899,6 +911,10 @@ body {
 
         .slick-dots {
           width: calc(100% - 24px);
+
+          @media screen and (max-width: 991px) {
+            width: 100%;
+          }
           li {
             &.slick-active button:before {
               color: $indigo;
@@ -1315,6 +1331,10 @@ body.dark {
           border-color: $blossom;
           background-color: $dark-indigo;
         }
+      }
+      @media screen and (max-width: 500px) {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
       }
     }
 

@@ -448,7 +448,7 @@ body main .bio-text {
   body main .bio-text {
     width: 100%;
     padding: 1rem 15px;
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: center;
   }
 }
@@ -586,6 +586,13 @@ body main .section-sub-header {
   }
 }
 
+@media screen and (max-width: 500px) {
+  body main .section-sub-header {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+
 body main .skills-block .skill-wrapper .col-lg-4:first-of-type .card:after {
   content: "";
   display: block;
@@ -685,6 +692,13 @@ body main .skills-block .highlighted-skills i svg {
   }
   body main .edu-block .edu-body {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body main .edu-block > .row > .col-lg-6 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
 
@@ -911,7 +925,7 @@ body main .slick-prev:before, body main .slick-next:before {
     z-index: 10;
   }
   body main .slick-next {
-    right: 5px;
+    right: 4px;
     z-index: 10;
   }
   body main .slick-prev:before, body main .slick-next:before {
@@ -921,6 +935,12 @@ body main .slick-prev:before, body main .slick-next:before {
 
 body main .slick-dots {
   width: calc(100% - 24px);
+}
+
+@media screen and (max-width: 991px) {
+  body main .slick-dots {
+    width: 100%;
+  }
 }
 
 body main .slick-dots li.slick-active button:before {
@@ -1341,6 +1361,13 @@ body.dark main .bio-text .resume-cta:hover {
   color: #ffb7c5;
   border-color: #ffb7c5;
   background-color: #12194d;
+}
+
+@media screen and (max-width: 500px) {
+  body.dark main .bio-text {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
 }
 
 body.dark main .contact-block .contact-wrapper a {
