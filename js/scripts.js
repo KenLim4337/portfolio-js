@@ -4,6 +4,8 @@ const modalTitles = {
     'proj-cwps': 'Civil War Photo Sleuth',
     'proj-ck': 'Conversion Kings',
     'proj-cd': 'CoviDash',
+    'proj-tshirt': 'T Shirt Design',
+    'proj-datavis': 'Yelp Data Visualization',
     'proj-the': 'Thesis Project',
     'proj-rc': 'Rack City',
 }
