@@ -8,6 +8,7 @@ const modalTitles = {
     'proj-datavis': 'Yelp Data Visualization',
     'proj-the': 'Thesis Project',
     'proj-rc': 'Rack City',
+    'proj-backdrop': 'BackTrace',
 }
 
 $(document).ready(function(){
@@ -125,7 +126,7 @@ function slickInit(selector) {
         adaptiveHeight: true,
         dots: true,
         autoplay: true,
-        autoplaySpeed: 8000,
+        autoplaySpeed: 10000,
         infinite: true,
         responsive: [
             {
