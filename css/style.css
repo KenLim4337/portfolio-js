@@ -643,7 +643,6 @@ body main .skills-block .highlighted-skills i {
   height: 60px;
   width: auto;
   font-size: 2.8rem;
-  padding-bottom: 20px;
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
@@ -680,6 +679,16 @@ body main .skills-block .highlighted-skills i svg {
   height: 40px;
   width: auto;
   vertical-align: top;
+}
+
+body main .skills-block .highlighted-skills .key-skill {
+  margin-bottom: 20px;
+  width: auto;
+  text-align: center;
+}
+
+body main .skills-block .highlighted-skills .key-skill div {
+  margin-top: -10px;
 }
 
 @media screen and (max-width: 991px) {
@@ -1412,14 +1421,14 @@ body.dark main .skills-block .highlighted-skills i.fa-figma {
   color: rgba(255, 255, 255, 0.87);
 }
 
-body.dark main .skills-block .highlighted-skills i[data-bs-original-title="Google Analytics"] g:not(#g6628) path {
-  fill: rgba(255, 255, 255, 0.87) !important;
-}
-
 body.dark main .skills-block .highlighted-skills i svg {
   height: 40px;
   width: auto;
   vertical-align: top;
+}
+
+body.dark main .skills-block .highlighted-skills [data-bs-original-title="Google Analytics"] g:not(#g6628) path {
+  fill: rgba(255, 255, 255, 0.87) !important;
 }
 
 body.dark main .edu-block .cta-wrap:after {

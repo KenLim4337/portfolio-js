@@ -135,8 +135,7 @@ function slickInit(selector) {
                     slidesToShow: 1,
                     adaptiveHeight: true,
                     dots: true,
-                    autoplay: true,
-                    autoplaySpeed: 8000,
+                    autoplay: false,
                     infinite: true,
                 }
             }

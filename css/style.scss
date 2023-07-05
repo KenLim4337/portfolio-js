@@ -597,46 +597,57 @@ body {
             }
           }
 
-          .highlighted-skills i {
-            height: 60px;
-            width: auto;
-            font-size: 2.8rem;
-            padding-bottom: 20px;
-            transition: 0.3s ease all;
+          .highlighted-skills {
+              i {
+                height: 60px;
+                width: auto;
+                font-size: 2.8rem;
+                transition: 0.3s ease all;
 
-            &.fa-html5 {
-              color: #D94924;
-            }
+                &.fa-html5 {
+                  color: #D94924;
+                }
 
-            &.fa-css3-alt {
-              color: #0068B1;
-            }
+                &.fa-css3-alt {
+                  color: #0068B1;
+                }
 
-            &.fa-js-square {
-              color: #F28F2B;
-            }
+                &.fa-js-square {
+                  color: #F28F2B;
+                }
 
-            &.fa-git-alt {
-              color: #E44C30;
-            }
-            
-            &.fa-figma {
-              color: #000000;
-            }
+                &.fa-git-alt {
+                  color: #E44C30;
+                }
+                
+                &.fa-figma {
+                  color: #000000;
+                }
 
-            &.fa-invision {
-              color: #F2305F;
-            }
-            
-            &.fa-python {
-              color: #356895;
-            }
+                &.fa-invision {
+                  color: #F2305F;
+                }
+                
+                &.fa-python {
+                  color: #356895;
+                }
 
-            svg {
-              height: 40px;
-              width: auto;
-              vertical-align: top;
-            }
+                svg {
+                  height: 40px;
+                  width: auto;
+                  vertical-align: top;
+                }
+              }
+              
+              .key-skill {
+                margin-bottom: 20px;
+                width: auto;
+                text-align: center;
+
+                div {
+                  margin-top: -10px;
+                }
+              }
           }
         }
 
@@ -1383,19 +1394,21 @@ body.dark {
         }
       }
 
-      .highlighted-skills i {
-        &.fa-figma {
-          color: $font-dark;
+      .highlighted-skills {
+        i {
+          &.fa-figma {
+            color: $font-dark;
+          }
+          
+          svg {
+            height: 40px;
+            width: auto;
+            vertical-align: top;
+          }
         }
         
-        &[data-bs-original-title="Google Analytics"] g:not(#g6628) path {
+        [data-bs-original-title="Google Analytics"] g:not(#g6628) path {
           fill: $font-dark !important;
-        }
-
-        svg {
-          height: 40px;
-          width: auto;
-          vertical-align: top;
         }
       }
     }
