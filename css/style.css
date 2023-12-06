@@ -449,7 +449,7 @@ body main .bio-text {
     width: 100%;
     padding: 1rem 15px;
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -700,7 +700,7 @@ body main .skills-block .highlighted-skills .key-skill div {
     margin-top: 50px !important;
   }
   body main .edu-block .edu-body {
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -791,7 +791,7 @@ body main .projects-block .project-thumb img {
 
 @media screen and (max-width: 991px) {
   body main .projects-block .project-desc {
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -1051,7 +1051,7 @@ body .modal .modal-header h5.modal-title {
 
 body .modal .modal-body .modal-loading {
   margin: 20px auto 60px;
-  text-align: center;
+  text-align: left;
 }
 
 body .modal .modal-body .modal-loading svg rect {

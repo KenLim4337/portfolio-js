@@ -1,38 +1,201 @@
-<p>
-    Painted backdrops were widely used in portrait photography around the world throughout the 19th century. Studies into these backdrops have yielded insights into practices of early photographers, as well as the complex socio-political factors surrounding the photographers and their subjects. These backdrops have drawn particular interest from historians, art historians, and collectors throughout the entirety of the American Civil War (1861 -- 1865), the first major conflict to be extensively documented via photography, and during which time many new, military-themed backdrops were introduced. 
-</p>
+<h4 class="mb-3">A Human-AI Collaborative Approach to Discovering Studio
+    Backdrops in Historical Photographs </h4>
 
-<div class="modal-img my-4" style="text-align: center;">
-    <img src="/img/backdrop.jpg" alt="Backdrop Example" style="max-width: 300px;margin:auto;">
-    <em class="d-block text-center mt-2">Figure 1: Example of a painted backdrop from the Civil War Era.</em>
+<div class="card m-5 p-4 pb-2">
+    <h5>Summary</h5>
+
+    <p>
+        In historical photo research, the presence of painted backdrops have the potential to help identify photographers, locations, subjects, and events surrounding certain photographs. However, few dedicated tools exist to aid researchers in this largely manual task. In response to this gap, I designed and developed Backtrace – an AI-powered reverse image search that accepts user feedback to iteratively improve search results, ultimately enabling research at a broader scale. 
+    </p>
 </div>
 
-<p>
-    In Civil War photography research, the painted backdrop can be used as an additional piece of information when inferring a particular subject, photographer, event, or location. By comparing photos with the same backdrop and examining other facts such as uniform features, researchers can narrow down the potential list of photographers, locations, and subjects that can be identified for the photo, even when no other clues exist.
-</p>
+<div class="my-5">
+    <h5>Introduction</h5>
+    <div class="row">
+        <div class="col-md-7">
 
-<div class="modal-img my-4">
-    <img src="/img/backdrop_faceted.png" alt="BackTrace User Feedback System">
-    <em class="d-block text-center mt-2">Figure 2: User feedback system of BackTrace's search.</em>
+            <p>
+                Backtrace is a reverse image search system that incorporates novel computer vision techniques and user feedback for identifying and clustering painted backdrops of the Civil War. Painted backdrops were widely used in portrait photography around the world throughout the 19th century. Particularly, the American Civil War (1861 - 1865) saw a boom in portrait photography and many painted backdrops unique to that era were produced. 
+            </p>
+            <p>
+                The examination of these backdrops can help researchers in narrowing down potential photographers, locations, and subjects associated with a photograph, even when no other clues exist. However, the process for tapping into this information requires specialized domain knowledge, and is very time consuming especially when carried out at scale. 
+            </p>
+        </div>
+    
+        <div class="modal-img col-md-5">
+            <img src="/img/benton.jpg" alt="Benton Barracks Photo">
+            <em class="d-block text-left mt-2">Figure 1: A Civil War era portrait featuring the backdrop known as the "Benton Barracks".</em>
+        </div>
+    </div>
 </div>
 
-<div class="modal-img my-4">
-    <img src="/img/backdrop_full.png" alt="BackTrace User Interface">
-    <em class="d-block text-center mt-2">Figure 3: Full user interface of BackTrace.</em>
+
+<div class="my-5">
+    
+<h5>My Role</h5>
+<p>Collaborating with my professor, peers, and members of the American Civil War photography community, my role was to conceptualize, design, and subsequently develop a Human-AI application that effectively facilitates research around painted backdrops. This project was undertaken as my masters thesis at Virginia Tech. </p>
+
 </div>
-<p>
-    To address this research gap, we present BackTrace, a reverse image search system that incorporates novel computer vision techniques and user feedback for identifying and clustering painted backdrops of the Civil War. By utilizing image embeddings instead of text descriptions to power search functions, we make the tool usable even on scarcely tagged archives. Given a query photo, BackTrace retrieves photos with the most similar backdrops from the database and displays them for the user to compare. We also provide an interface for users to inspect and compare photos in detail.
-</p>
 
-<div class="modal-img my-4">
-    <img src="/img/backdrop_result.png" alt="BackTrace Analysis Results">
-    <em class="d-block text-center mt-2">Figure 4: Comparison of user preference for visual search over text search.</em>
+<div class="my-5">
+    <h4>System Description</h4>
+
+    
+    <div class="modal-img col-md-12 mb-4" id="backtrace_workflow">
+        <img src="/img/backtraceworkflow.png" alt="Backtrace's workflow">
+        <em class="d-block text-left mt-2">Figure 2: Backtrace's workflow. (A) Subjects are masked out of the photo. (B) Image embeddings are extracted from the masked photo. (C) Embeddings are stored in a database for future use. (D) After selecting a query photo, users are shown a list of photos with similar backdrops. Users can select photos from these results to use for refinement. (E) Search results are reordered to match photos selected for refinement. (F) Users can match and group photos with identical backdrops into collections.</em>
+    </div>
+
+    <h5 class="mt-4">Isolating Backdrops</h5>
+
+    <div class="modal-img col-md-12 mb-4" id="backtrace_metadata">
+        <img src="/img/beforesearch.png" alt="Metadata interface">
+        <em class="d-block text-left mt-2">Figure 3: Users are prompted for information they already know about a photo before starting their search.</em>
+    </div>
+
+    <p>
+        Backtrace's iterative discovery process by focuses on the backdrop region within the image. Users describe backdrops by assigning descriptive tags, serving as search keywords in subsequent stages. A free-form text input field allows diverse and unique descriptions due to the absence of a well-established backdrop taxonomy (<a href="#backtrace_metadata">Figure 3</a>).
+    </p>
+    
+    <p>
+        After tagging, Backtrace utilizes PixelLib’s image segmentation capabilities to isolate the backdrop and remaining foreground elements for image embedding generation. The isolated image elements are fed into a modified version of Masked Autoencoder (MAE), which generates a vector, or embedding representing the backdrop of a given image. This vector is then used for comparison in the search pool (<a href="#backtrace_workflow">Figure 2 -- A, B, C</a>).
+    </p>
+    
+    <p>
+        To filter relevant images, a Support Vector Machine (SVM) classifier is trained offline to eliminate images without backdrops from the search pool. 
+    </p>
+    
+
+    <h5 class="mt-4">Exploring Matches</h5>
+    
+    <div class="modal-img col-md-12 mb-4" id="backtrace_search">
+        <img src="/img/results.jpg" alt="Search interface">
+        <em class="d-block text-left mt-2">Figure 4: Backtrace's search interface displaying top results.</em>
+    </div>
+    <p>
+        Once image embeddings and the search pool are initialized, Backtrace employs a K-Nearest Neighbors (KNN) algorithm to retrieve images with similar backdrops. The algorithm compares the cosine similarities between the query image embeddings and those in the search pool (<a href="#backtrace_workflow">Figure 2 -- D</a>), presenting the top 1000 closest matches to the user in a grid format (<a href="#backtrace_search">Figure 4</a>).  
+    </p>
+    
+    <p>
+        To refine search results according to human perceptions, Backtrace incorporates relevance feedback. Users can iteratively adjust results based on features they find relevant, addressing potential mismatches in the initial search. The system introduces a "see more like this" button, enabling users to select images for refining results. An on-the-fly training of a logistic regression classifier occurs, using selected images and the query image as positive examples. This reorders the search results based on predicted probability scores, with the user having the flexibility to update selections iteratively (<a href="#backtrace_workflow">Figure 2 -- E</a>).
+    </p>
+
+    <p>
+        In addition to visual refinement, Backtrace provides a text box for keyword-based filtering. Users can input backdrop descriptions, allowing the system to prioritize images matching these filters and present them at the top of the results list. The combination of visual and keyword-based refinement offers users a comprehensive approach to optimizing search results iteratively.
+    </p>
+    
+    
+    <h5 class="mt-4">Curating Collections</h5>
+    
+    <p>
+        Once users are satisfied with Backtrace's search results, they can closely examine images and organize them into collections with similar backdrops. Collections in Backtrace are user-curated groups of photographs based on perceived backdrop similarity.
+    
+    </p>
+    
+    <div class="modal-img col-md-12 mb-4" id="backtrace_compare">
+        <img src="/img/comparefinal.png" alt="Compare interface">
+        <em class="d-block text-left mt-2">Figure 5: Backtrace's interface to allow for in-depth comparisons of photos.</em>
+    </div>
+
+    <p>
+         Users make a two-step decision: first, they determine whether the two photos show the same backdrop by selecting from options like "Same backdrop," "Not sure," or "Different backdrop." (<a href="#backtrace_compare">Figure 5</a>) Second, if the target backdrop is part of an existing collection, the user rates their confidence regarding the membership of the query photo in that collection. If confident, the query photo is added to the collection (<a href="#backtrace_workflow">Figure 2 -- F</a>).
+    
+    </p>
+    <p>
+        Users can finalize the new collection containing all photos deemed to have the same backdrop as the query photo, providing metadata such as a nickname and description. Backtrace restricts users from directly adding new images to existing collections to ensure an iterative exploratory workflow. This policy minimizes confirmation bias, although it may result in multiple collections associated with the same backdrop. To address potential fragmentation, Backtrace displays related photos from other collections on the "Collection" page, providing a comprehensive view of all photos associated with the same backdrop.
+    </p>
 </div>
-<p>
-    We conducted a mixed-methods evaluation, including user studies, logs, and interviews, with nine participants of varying experience in painted backdrop identification. We found that users were able to effectively utilize BackTrace during testing to identify photos with similar backdrops. Users also reported appreciating visual based search more than the textual alternative.
-</p>
 
-<p>
-    The application is planned for public deployment summer 2023. The project will also be submitted for publication.
-</p>
+<div class="my-5">
+    <h4>Evaluation</h4>
 
+    <p>
+        To assess the efficacy of Backtrace in facilitating background research, I conducted user studies involving 9 individuals with diverse levels of experience in researching Civil War photo backdrops. Following the conclusion of each user study, participants were presented with a survey, after which I conducted a semi-structured interview to gather more in-depth insights.
+    </p>
+</div>
+
+
+<div class="my-5">
+    <h4>Key Findings</h4>
+
+    <div class="row">
+        <div class="p-3 col-md-6">
+            <div class="card p-3">
+                <p class="p-0 m-0">Utilizing Backtrace's search workflow, participants effectively unearthed new photos with similar backdrops.
+                </p>
+            </div>
+        </div>
+        
+        <div class="p-3 col-md-6">
+            <div class="card p-3">
+                <p class="p-0 m-0">Despite mixed sentiments about the performance of AI, participants acknowledged and valued its role in the process.
+                </p>
+            </div>
+        </div>
+        
+        <div class="p-3 col-md-6">
+            <div class="card p-3">
+                <p class="p-0 m-0">Backtrace emerged as the preferred choice among participants when compared to traditional backdrop research methods.</p>
+            </div>
+        </div>
+        
+        <div class="p-3 col-md-6">
+            <div class="card p-3">
+                <p class="p-0 m-0">Participants demonstrated the capability to curate diverse photo collections based on shared backdrops.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="my-5">
+    <h4>Publications</h4>
+<div class="mt-3">
+    <div class="card border-0 mb-4" style="background: none;">
+        <div class="card-title text-decoration-underline">
+            <a href="https://ojs.aaai.org/index.php/HCOMP/article/view/27551" target="_blank">Backtrace: A Human-AI Collaborative Approach to Discovering Studio Backdrops in Historical Photographs</a>
+        </div>
+        <div class="card-body px-0">
+            <div class="pub-auth mb-2">
+                <strong>J. Lim</strong>, V. Mohanty, T. Dodson, and K. Luther.
+            </div>
+            
+            <div class="pub-venue fst-italic">
+                Proceedings of the AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2023)
+            </div>
+        </div>
+    </div>
+    <div class="card border-0 mb-4" style="background: none;">
+        <div class="card-title text-decoration-underline">
+            <a href="https://www.humancomputation.com/assets/wips_demos/HCOMP-23_paper_8465.pdf" target="_blank">Behind the Canvas: A Human-AI Workflow for Tracing 19th-Century Photographers and Studio Backdrops</a>
+        </div>
+        <div class="card-body px-0">
+            <div class="pub-auth mb-2">
+                V. Mohanty, <strong>J. Lim</strong>, T. Dodson, and K. Luther.
+            </div>
+            
+            <div class="pub-venue fst-italic">
+                <strong>Best Demo</strong> at the AAAI Conference on Human Computation and Crowdsourcing (HCOMP 2023)
+            </div>
+        </div>
+    </div>
+    <div class="card border-0 mb-4" style="background: none;">
+        <div class="card-title text-decoration-underline">
+            <a href="https://vtechworks.lib.vt.edu/handle/10919/115427" target="_blank">Backdrop Explorer:  A Human-AI Collaborative Approach for Exploring Studio Backdrops in Civil War Portraits</a>
+        </div>
+        <div class="card-body px-0">
+            <div class="pub-auth mb-2">
+                <strong>J. Lim</strong>
+            </div>
+            
+            <div class="pub-venue fst-italic">
+                Masters Thesis Submission
+            </div>
+        </div>
+    </div>
+   
+</div>
+</div>

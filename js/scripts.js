@@ -121,35 +121,35 @@ function heightRegulator(selector, threshold=0) {
 }
 
 function slickInit(selector) {
-    $(selector).slick({
-        slidesToShow: 3,
-        adaptiveHeight: true,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 10000,
-        infinite: true,
-        responsive: [
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 1,
-                    adaptiveHeight: true,
-                    dots: true,
-                    autoplay: false,
-                    infinite: true,
-                }
-            }
-        ]
-    });
+    // $(selector).slick({
+    //     slidesToShow: 3,
+    //     adaptiveHeight: true,
+    //     dots: true,
+    //     autoplay: true,
+    //     autoplaySpeed: 10000,
+    //     infinite: true,
+    //     responsive: [
+    //         {
+    //             breakpoint: 991,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 adaptiveHeight: true,
+    //                 dots: true,
+    //                 autoplay: false,
+    //                 infinite: true,
+    //             }
+    //         }
+    //     ]
+    // });
 
     var poller = setInterval(function(){
         heightRegulator('.project-thumb img', 991);
         heightRegulator('.project-desc', 991);
     }, 500);
 
-    setTimeout(function(){
-        clearInterval(poller);
-    },3000);
+    // setTimeout(function(){
+    //     clearInterval(poller);
+    // },3000);
 }
 
 
@@ -162,8 +162,8 @@ function rotateRandom() {
         $('.background svg path:eq('+selected+')').removeClass('animateBwd').addClass('animateFwd');
     }
 
-    //Max delay = 5 secs
-    var randomTime = Math.random() * 5000;
+    //Max delay = 1 secs
+    var randomTime = Math.random() * 1000;
     //Recursively run
     setTimeout(rotateRandom, randomTime);
 }

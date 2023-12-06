@@ -413,7 +413,7 @@ body {
               width: 100%;
               padding: 1rem 15px;
               margin-top: 20px;
-              text-align: center;
+              text-align: left;
             }
 
             .cta-wrap {
@@ -663,7 +663,7 @@ body {
             }
 
             .edu-body {
-              text-align: center;
+              text-align: left;
             }
           }
 
@@ -760,7 +760,7 @@ body {
 
           @media screen and (max-width: 991px) {
             .project-desc {
-              text-align: center;
+              text-align: left;
             }
           }
 
@@ -1029,7 +1029,7 @@ body {
       .modal-body {
         .modal-loading {
           margin: 20px auto 60px;
-          text-align: center;
+          text-align: left;
 
           svg {
             rect {
